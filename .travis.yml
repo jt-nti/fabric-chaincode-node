@@ -1,0 +1,12 @@
+os: linux-s390
+install:
+  - git clone --branch master --depth 1 https://github.com/hyperledger/fabric.git
+  - mkdir -p no-go/src/github.com/hyperledger && mv fabric no-go/src/github.com/hyperledger
+  - npm --version
+  - npm install -g gulp
+script:
+  - npm install
+  - gulp docker-image-build
+  - gulp protos
+  - DEVMODE=false gulp channel-init
+  - gulp test-fv-shim

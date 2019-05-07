@@ -20,7 +20,7 @@ describe('Chaincode clientidentity', () => {
         return utils.installAndInstantiate(suite, 'org.mynamespace.clientidentity:instantiate');
     });
 
-    it('should create an instance of the client identity class', async function () {
+    it.only('should create an instance of the client identity class', async function () {
         this.timeout(MED_STEP);
 
         const payload = JSON.parse(await utils.query(suite, 'org.mynamespace.clientidentity:clientIdentityInstance', []));

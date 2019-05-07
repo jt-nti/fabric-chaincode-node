@@ -24,14 +24,14 @@ describe('Chaincode crosschaincode', () => {
 
     describe('Invoke', () => {
 
-        it('should invoke chaincode', async function () {
+        it.only('should invoke chaincode', async function () {
             this.timeout(LONGEST_STEP);
 
             const payload = await utils.query(suite, 'org.mynamespace.crosschaincode:invokeChaincode', ['getKey', 'key1']);
             expect(JSON.parse(payload)).to.equal('crosschaincode2');
         });
 
-        it('should throw an error when invoking chaincode', async function () {
+        it.only('should throw an error when invoking chaincode', async function () {
             this.timeout(LONGEST_STEP);
 
             const payload = await utils.query(suite, 'org.mynamespace.crosschaincode:invokeChaincodeError', ['getKey']);
