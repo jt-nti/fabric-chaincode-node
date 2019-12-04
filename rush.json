@@ -343,11 +343,6 @@
             "reviewCategory": "docker"
         },
         {
-            "packageName": "apidocs",
-            "projectFolder": "docs/apidocs",
-            "reviewCategory": "docs"
-        },
-        {
             "packageName": "fabric-shim",
             "projectFolder": "libraries/fabric-shim",
             "reviewCategory": "libraries",
