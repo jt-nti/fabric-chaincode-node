@@ -1,12 +1,3 @@
 theme: minima
 title: "fabric-chaincode-node"
-releases:
-  - master
-  - release-1.4
-defaults:
-  -
-    scope:
-      path: "readme.md"
-    values:
-      title: "Such APIs"
 
