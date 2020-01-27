@@ -1,6 +1,4 @@
 ---
-<!-- Keep this YAML front matter block to trigger Jekyll processing -->
-<!-- https://jekyllrb.com/docs/frontmatter for more information -->
 ---
 
 # Hyperledger Fabric - Node.js Contracts
