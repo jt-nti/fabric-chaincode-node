@@ -53,6 +53,7 @@ declare module 'fabric-shim-api' {
 
         getTxID(): string;
         getChannelID(): string;
+        getHandler(): ChaincodeSupportClient;
         getCreator(): SerializedIdentity;
         getTransient(): Map<string, Uint8Array>;
 
@@ -184,4 +185,8 @@ declare module 'fabric-shim-api' {
         }
     }
 
+    export interface ChaincodeSupportClient {
+        handleGetState(collection: string, key: string, channel_id: string, txId: string): Promise<Uint8Array>;
+        handleDeleteState(collection: string, key: string, channel_id: string, txId: string): Promise<any>;
+    }
 }

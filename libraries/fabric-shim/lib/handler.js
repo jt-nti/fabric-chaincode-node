@@ -540,6 +540,7 @@ class ChaincodeSupportClient {
     }
 }
 
+// TODO: Do something with client so the new ledger API can grab it? Here?
 async function handleMessage(msg, client, action) {
     const loggerPrefix = utils.generateLoggingPrefix(msg.channel_id, msg.txid);
 
@@ -640,6 +641,7 @@ async function handleMessage(msg, client, action) {
  * @returns a new Stub instance
  */
 function createStub(client, channel_id, txid, input, proposal) {
+    // TODO: Do something with client so the new ledger API can grab it? Here?
     return new Stub(client, channel_id, txid, input, proposal);
 }
 

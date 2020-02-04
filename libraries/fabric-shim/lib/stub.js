@@ -278,6 +278,11 @@ class ChaincodeStub {
         return this.channel_id;
     }
 
+    // For use by new ledger API: do not include in JSDoc
+    getHandler() {
+        return this.handler;
+    }
+
     /**
 	 * This object contains the essential identity information of the chaincode invocation's submitter,
 	 * including its organizational affiliation (mspid) and certificate (id_bytes)

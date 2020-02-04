@@ -20,7 +20,8 @@ declare module 'fabric-shim' {
         SerializedIdentity,
         SplitCompositekey,
         StateQueryResponse,
-        Timestamp
+        Timestamp,
+        ChaincodeSupportClient
     } from 'fabric-shim-api';
 
     export {
@@ -75,6 +76,7 @@ declare module 'fabric-shim' {
 
         getTxID(): string;
         getChannelID(): string;
+        getHandler(): ChaincodeSupportClient;
         getCreator(): SerializedIdentity;
         getTransient(): Map<string, Uint8Array>;
 

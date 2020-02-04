@@ -390,3 +390,6 @@ module.exports.HistoryQueryIterator = Iterators.HistoryQueryIterator;
 module.exports.StateQueryIterator = Iterators.StateQueryIterator;
 module.exports.ChaincodeInterface = ChaincodeInterface;
 module.exports.KeyEndorsementPolicy = KeyEndorsementPolicy;
+
+// expose the handler to allow separate module for the new ledger API
+module.exports.ChaincodeSupportClient = Handler;

@@ -7,6 +7,7 @@
 import {Collection, CollectionNames} from './Collection';
 
 import {Context} from 'fabric-contract-api';
+import {ChaincodeStub} from 'fabric-shim-api';
 
 /**
  * Entrypoint for the Ledger API.
@@ -15,10 +16,10 @@ import {Context} from 'fabric-contract-api';
  */
 export class Ledger {
 
-    private readonly _ctx: Context;
+    private readonly _stub: ChaincodeStub;
 
     private constructor (ctx: Context) {
-        this._ctx = ctx;
+        this._stub = ctx.stub;
     }
 
     /**
@@ -38,7 +39,7 @@ export class Ledger {
      * @returns {Promise<Collection>} A new Collection instance
      */
     public async getCollection (collectionName: string): Promise<Collection> {
-        return new Collection();
+        return new Collection(this._stub, collectionName);
     }
 
     /**
@@ -47,6 +48,6 @@ export class Ledger {
      * @returns {Promise<Collection>} A new Collection instance
      */
     public async getDefaultCollection (): Promise<Collection> {
-        return this.getCollection(CollectionNames.WORLD);
+        return this.getCollection(CollectionNames.WORLDSTATE);
     }
 }

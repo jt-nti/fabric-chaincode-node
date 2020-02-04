@@ -17,7 +17,7 @@ describe.only('Chaincode ledger', () => {
     before(async function () {
         this.timeout(LONG_STEP);
 
-        return utils.installAndInstantiate(suite);
+        return utils.installAndInstantiate(suite, 'org.example.ledger:instantiate');
     });
 
     it('should be able to use the ledger API', async function () {
@@ -25,5 +25,15 @@ describe.only('Chaincode ledger', () => {
 
         const payload = await utils.query(suite, 'org.example.ledger:getLedger', ['']);
         expect(payload).to.equal('success');
+    });
+
+    describe('Get', () => {
+
+        it('should get single key value', async function () {
+            this.timeout(LONG_STEP);
+
+            const payload = await utils.query(suite, 'org.example.ledger:getKey', ['string']);
+            expect(payload).to.equal('string');
+        });
     });
 });
